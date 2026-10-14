@@ -12,6 +12,7 @@
 
 #include "utilerias.h"
 #include "registro.h"
+#include "captura.h"
 
 // TODO: incluyan aqui el archivo .h de cada bloque individual.
 
