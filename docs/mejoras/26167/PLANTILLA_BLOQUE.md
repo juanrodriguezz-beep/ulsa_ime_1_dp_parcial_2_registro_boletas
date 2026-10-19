@@ -8,7 +8,7 @@ y llena tu copia.
 
 ## 1. Autor
 
-**Nombre:** [Daniel Miranda Ferreira]
+**Nombre:** [Daniel Miranda Ferreira] x2
 **Matrícula:** [26167]
 **Bloque y opción elegida:** [Inserta aquí tu respuesta]
 **Archivo de código:** [Inserta aquí tu respuesta]
