@@ -12,7 +12,12 @@
 
 #include "utilerias.h"
 #include "registro.h"
+#include "aprobados-reprobados.h"
+#include "boleta individual.h"
 #include "captura.h"
+#include "estadisticas.h"
+#include "materias-reprobadas.h"
+#include "mejor-peor-desempeno.h"
 
 // TODO: incluyan aqui el archivo .h de cada bloque individual.
 
