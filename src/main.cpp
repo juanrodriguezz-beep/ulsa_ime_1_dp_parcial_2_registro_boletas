@@ -12,8 +12,6 @@
 
 #include "utilerias.h"
 #include "registro.h"
-<<<<<<< HEAD
-#include "aprobados.h"
 #include "aprobados-reprobados.h"
 //#include "boleta.h"
 #include "boleta individual.h"
@@ -21,11 +19,8 @@
 #include "estadisticas.h"
 #include "materias-reprobadas.h"
 #include "mejor-peor-desempeno.h"
-#include "reprobados.h"
-=======
 
 // TODO: incluyan aqui el archivo .h de cada bloque individual.
->>>>>>> parent of fe4b330 (Tavares)
 
 int main() {
     // TODO: declaren aqui los cuatro arreglos paralelos y el total de alumnos.
