@@ -1,61 +1,58 @@
 #pragma once
-// Bloque: Captura de alumno
 #include <iostream>
 #include <string>
-#include "registro.h"
 #include "utilerias.h"
+#include "registro.h"
 
-// Constante propia: numero de materias que se capturan
-const int NUM_MATERIAS = 3;
+const int TOTAL_MATERIAS = 3;  // constante propia
 
-// Pide la calificacion de una materia (0 = Espanol, 1 = Matematicas,
-// otro = Diseno de Programas) y repite mientras sea invalida.
+// Pide una calificacion de la materia indicada (0, 1 o 2)
+// y repite mientras sea invalida.
 double pedirCalificacion(int materia) {
-    std::string etiqueta;
-    switch (materia) {
-        case 0:
-            etiqueta = "Espanol: ";
-            break;
-        case 1:
-            etiqueta = "Matematicas: ";
-            break;
-        default:
-            etiqueta = "Diseno de Programas: ";
-            break;
+    std::string mensaje;
+    switch (materia) {  // decision multiple
+        case 0:  mensaje = "Espanol: ";             break;
+        case 1:  mensaje = "Matematicas: ";         break;
+        default: mensaje = "Diseno de Programas: "; break;
     }
-
-    double calif = leerDecimal(etiqueta);
-    while (!calificacionValida(calif)) {
+    double calificacion = leerDecimal(mensaje);
+    while (!calificacionValida(calificacion)) {  // ciclo
         std::cout << "Calificacion invalida. Debe estar entre "
                   << CALIFICACION_MINIMA << " y " << CALIFICACION_MAXIMA << ".\n";
-        calif = leerDecimal(etiqueta);
+        calificacion = leerDecimal(mensaje);
     }
-    return calif;
+    return calificacion;
 }
 
-// Captura un alumno completo. Devuelve el nuevo total de alumnos.
-int capturarAlumno(std::string nombres[], double esp[], double mat[],
-                   double dp[], int total) {
-    // Rechazo: lista llena
-    if (total >= MAX_ALUMNOS) {
+// Captura un alumno. Devuelve el nuevo total.
+int capturarAlumno(std::string nombres[], double espanol[], double matematicas[],
+                   double diseno[], int total) {
+    if (total >= MAX_ALUMNOS) {  // rechazo por lista llena
         std::cout << "La lista esta llena (" << MAX_ALUMNOS << " alumnos).\n";
         return total;
     }
 
-    // Rechazo: nombre vacio
+        std::cout << "La lista esta llena (" << MAX_ALUMNOS << " alumnos).\n";
+        return total;
+    }
+
     std::string nombre = leerCadena("Nombre: ");
     while (nombre.empty()) {
-        std::cout << "El nombre no puede quedar vacio.\n";
+        std::cout << "El nombre no puede estar vacio.\n";
         nombre = leerCadena("Nombre: ");
     }
 
-    double calif[NUM_MATERIAS];
-    for (int i = 0; i < NUM_MATERIAS; i++) {
-        calif[i] = pedirCalificacion(i);
+    double cal[TOTAL_MATERIAS];
+    for (int m = 0; m < TOTAL_MATERIAS; m++) {
+        cal[m] = pedirCalificacion(m);
     }
 
-    int nuevoTotal = agregarAlumno(nombres, esp, mat, dp, total,
-                                   nombre, calif[0], calif[1], calif[2]);
+    int nuevoTotal = agregarAlumno(nombres, espanol, matematicas, diseno,
+                                   total, nombre, cal[0], cal[1], cal[2]);
+
+    std::cout << "Alumno " << nuevoTotal << " registrado.\n";
+    return nuevoTotal;
+}
     std::cout << "Alumno " << nuevoTotal << " registrado.\n";
     return nuevoTotal;
 }
