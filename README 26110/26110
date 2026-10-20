@@ -1,0 +1,113 @@
+# Proyecto Parcial 2: Sistema de Registro y Boletas de un Grupo Escolar
+
+> **Importante:** este README es del equipo y debe tener aportaciones de todos los integrantes. La guía completa está en [`PROYECTO.md`](PROYECTO.md).
+
+## 1. Integrantes
+
+| Bloque | Matrícula | Nombre | Usuario de GitHub | Opción elegida |
+| --- | --- | --- | --- | --- |
+| 1 | [...] | [...] | [...] | Captura |
+| 2 | [...] | [...] | [...] | Estadísticas por materia |
+| 3 | 26110 | Lucia Tavares | luciatavarespinosa | Aprobados y reprobados |
+| 4 | [...] | [...] | [...] | Boleta individual |
+| 5 | [...] | [...] | [...] | Materias reprobadas por alumno |
+
+## 2. Opciones del menú
+
+1. Capturar alumno
+2. Mostrar lista
+3. Estadísticas por materia
+4. Aprobados y reprobados
+5. Boleta individual
+6. Materias reprobadas por alumno
+7. Salir
+
+## 3. Cómo compilar y ejecutar
+
+Desde la carpeta del proyecto:
+
+```
+g++ -Wall -Wextra -std=c++17 -Iinclude src/main.cpp -o boletas
+./boletas
+```
+
+## 4. Reglas del programa
+
+- Una materia se aprueba con 7.0 o más (un 7.0 exacto aprueba).
+- El promedio es la suma de las tres calificaciones entre 3.
+- Un alumno está aprobado solo si aprueba las tres materias.
+- Las calificaciones van de 0 a 10 y se imprimen con 1 decimal.
+- En estadísticas, si hay empate entre materias, gana la primera en el orden Español, Matemáticas, Diseño de Programas.
+- La boleta busca el nombre exacto, respetando mayúsculas y minúsculas.
+- Con la lista vacía, cada reporte avisa "No hay alumnos registrados." y regresa al menú.
+
+## 5. Datos del escenario
+
+| # | Nombre | Español | Matemáticas | Diseño de Programas |
+| --- | --- | --- | --- | --- |
+| 1 | Ana | 9 | 8 | 10 |
+| 2 | Luis | 7 | 6 | 8 |
+| 3 | Marta | 6 | 5 | 7 |
+| 4 | Jorge | 8 | 7 | 9 |
+| 5 | Sofia | 10 | 9 | 8 |
+| 6 | Raul | 5 | 7 | 6 |
+
+## 6. Cálculo a mano
+
+| Bloque | Valores elegidos | Resultado esperado |
+| --- | --- | --- |
+| 1 | 6 alumnos, un intento con 11 y un séptimo alumno | 6 registrados, 1 rechazo, 1 aviso de lista llena |
+| 2 | Sumas 45.0, 42.0 y 48.0 entre 6 | 7.5, 7.0 y 8.0; más alta Diseño de Programas, más baja Matemáticas |
+| 3 | Mínimo para aprobar 7.0 | Español 4 y 2, Matemáticas 4 y 2, Diseño de Programas 5 y 1 |
+| 4 | Buscar Marta y Hugo | Marta: promedio 6.0, 2 materias reprobadas, Reprobado; Hugo no encontrado |
+| 5 | Calificaciones menores a 7.0 | Luis 1, Marta 2, Raul 2; total 3 alumnos |
+
+**¿La salida del programa coincidió con el cálculo a mano? Si no, ¿qué corrigieron?**
+
+Sí coincidió. No fue necesario corregir nada.
+
+## 7. Receta del menú
+
+```
+1. Crear los cuatro arreglos y poner el total de alumnos en 0.
+
+2. Poner opcion en 0.
+
+3. MIENTRAS opcion sea distinta de 7 HACER lo siguiente.
+
+4. Mostrar el menú con las 7 opciones.
+
+5. Pedir al usuario la opción y leer opcion.
+
+6. SI opcion es 1 ENTONCES capturar un alumno y guardar el nuevo total.
+
+7. SI opcion es 2 ENTONCES mostrar la lista.
+
+8. SI opcion es 3 ENTONCES mostrar las estadísticas por materia.
+
+9. SI opcion es 4 ENTONCES mostrar aprobados y reprobados.
+
+10. SI opcion es 5 ENTONCES mostrar la boleta individual.
+
+11. SI opcion es 6 ENTONCES mostrar las materias reprobadas por alumno.
+
+12. SI opcion es 7 ENTONCES Mostrar "Hasta luego."
+
+13. SI opcion no es ninguna de las anteriores ENTONCES Mostrar "Opcion invalida."
+
+14. FIN MIENTRAS.
+```
+
+## 8. Documentación individual
+
+| Bloque | Documentación | Propuesta de mejora |
+| --- | --- | --- |
+| 1 | [docs/matrícula/bloque.md] | [docs/mejoras/matrícula/mejora.md] |
+| 2 | [docs/matrícula/bloque.md] | [docs/mejoras/matrícula/mejora.md] |
+| 3 | [docs/26110/bloque.md](docs/26110/bloque.md) | [docs/mejoras/26110/mejora.md](docs/mejoras/26110/mejora.md) |
+| 4 | [docs/matrícula/bloque.md] | [docs/mejoras/matrícula/mejora.md] |
+| 5 | [docs/matrícula/bloque.md] | [docs/mejoras/matrícula/mejora.md] |
+
+## 9. Cambios a la interfaz
+
+Sin cambios.

@@ -5,35 +5,63 @@
 //   g++ -Wall -Wextra -std=c++17 -Iinclude src/main.cpp -o boletas
 // Ejecutar:
 //   ./boletas
-//
-// Lean PROYECTO.md antes de escribir codigo.
 
 #include <iostream>
+#include <string>
 
 #include "utilerias.h"
 #include "registro.h"
-
-// TODO: incluyan aqui el archivo .h de cada bloque individual.
+#include "captura.h"
+#include "estadisticas.h"
+#include "aprobados.h"
+#include "boleta.h"
+#include "reprobados.h"
 
 int main() {
-    // TODO: declaren aqui los cuatro arreglos paralelos y el total de alumnos.
-    //       No usen variables globales.
+    std::string nombres[MAX_ALUMNOS];
+    double espanol[MAX_ALUMNOS];
+    double matematicas[MAX_ALUMNOS];
+    double diseno[MAX_ALUMNOS];
+    int total = 0;
 
-    // TODO: menu que se repite hasta elegir "Salir".
-    //       Una opcion por bloque individual, mas "Mostrar lista" y "Salir".
-    //       Una opcion que no existe se rechaza con un mensaje.
+    const int OPCION_SALIR = 7;
+    int opcion = 0;
 
-    // El menu debe permitir ejecutar el escenario obligatorio, en este orden:
-    //
-    // Paso 1: elegir un reporte con la lista vacia (rechazo).
-    // Paso 2: capturar 6 alumnos. En uno de ellos, teclear primero una
-    //         calificacion fuera de rango (rechazo).
-    // Paso 3: intentar capturar un alumno mas (rechazo por lista llena).
-    // Paso 4: mostrar la lista.
-    // Paso 5: ejecutar cada reporte del equipo.
-    // Paso 6: provocar el rechazo propio de al menos un reporte.
-    // Paso 7: teclear una opcion de menu que no existe (rechazo).
-    // Paso 8: salir.
+    while (opcion != OPCION_SALIR) {
+        std::cout << "\n1. Capturar alumno\n"
+                  << "2. Mostrar lista\n"
+                  << "3. Estadisticas por materia\n"
+                  << "4. Aprobados y reprobados\n"
+                  << "5. Boleta individual\n"
+                  << "6. Materias reprobadas por alumno\n"
+                  << "7. Salir\n";
+        opcion = leerEntero("Opcion: ");
 
+        switch (opcion) {
+            case 1:
+                total = capturarAlumno(nombres, espanol, matematicas, diseno, total);
+                break;
+            case 2:
+                mostrarLista(nombres, espanol, matematicas, diseno, total);
+                break;
+            case 3:
+                estadisticasPorMateria(nombres, espanol, matematicas, diseno, total);
+                break;
+            case 4:
+                aprobadosYReprobados(nombres, espanol, matematicas, diseno, total);
+                break;
+            case 5:
+                boletaIndividual(nombres, espanol, matematicas, diseno, total);
+                break;
+            case 6:
+                materiasReprobadasPorAlumno(nombres, espanol, matematicas, diseno, total);
+                break;
+            case OPCION_SALIR:
+                std::cout << "Hasta luego.\n";
+                break;
+            default:
+                std::cout << "Opcion invalida.\n";
+        }
+    }
     return 0;
 }
