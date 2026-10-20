@@ -13,7 +13,7 @@
 #include "registro.h"
 #include "aprobados.h"
 #include "aprobados-reprobados.h"
-#include "boleta.h"
+//#include "boleta.h"
 #include "boleta individual.h"
 #include "captura.h"
 #include "estadisticas.h"
