@@ -6,13 +6,13 @@
 
 const int TOTAL_MATERIAS = 3;  // constante propia
 
-// Pide una calificacion de la materia indicada (1, 2 o 3)
+// Pide una calificacion de la materia indicada (0, 1 o 2)
 // y repite mientras sea invalida.
 double pedirCalificacion(int materia) {
     std::string mensaje;
     switch (materia) {  // decision multiple
-        case 1:  mensaje = "Espanol: ";             break;
-        case 2:  mensaje = "Matematicas: ";         break;
+        case 0:  mensaje = "Espanol: ";             break;
+        case 1:  mensaje = "Matematicas: ";         break;
         default: mensaje = "Diseno de Programas: "; break;
     }
     double calificacion = leerDecimal(mensaje);
@@ -32,6 +32,10 @@ int capturarAlumno(std::string nombres[], double espanol[], double matematicas[]
         return total;
     }
 
+        std::cout << "La lista esta llena (" << MAX_ALUMNOS << " alumnos).\n";
+        return total;
+    }
+
     std::string nombre = leerCadena("Nombre: ");
     while (nombre.empty()) {
         std::cout << "El nombre no puede estar vacio.\n";
@@ -40,11 +44,15 @@ int capturarAlumno(std::string nombres[], double espanol[], double matematicas[]
 
     double cal[TOTAL_MATERIAS];
     for (int m = 0; m < TOTAL_MATERIAS; m++) {
-        cal[m] = pedirCalificacion(m + 1);
+        cal[m] = pedirCalificacion(m);
     }
 
     int nuevoTotal = agregarAlumno(nombres, espanol, matematicas, diseno,
                                    total, nombre, cal[0], cal[1], cal[2]);
+
+    std::cout << "Alumno " << nuevoTotal << " registrado.\n";
+    return nuevoTotal;
+}
     std::cout << "Alumno " << nuevoTotal << " registrado.\n";
     return nuevoTotal;
 }

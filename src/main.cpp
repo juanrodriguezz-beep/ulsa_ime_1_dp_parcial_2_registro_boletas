@@ -11,10 +11,14 @@
 
 #include "utilerias.h"
 #include "registro.h"
+#include "aprobados.h"
+#include "aprobados-reprobados.h"
+#include "boleta.h"
+#include "boleta individual.h"
 #include "captura.h"
 #include "estadisticas.h"
-#include "aprobados.h"
-#include "boleta.h"
+#include "materias-reprobadas.h"
+#include "mejor-peor-desempeno.h"
 #include "reprobados.h"
 
 int main() {
