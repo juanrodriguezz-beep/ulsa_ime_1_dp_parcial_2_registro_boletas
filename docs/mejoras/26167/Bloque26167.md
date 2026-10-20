@@ -77,6 +77,6 @@ Tu receta en pseudocódigo, escrita antes de programar.
 
 | # | Duda o error | Cómo lo resolví |
 | --- | --- | --- |
-| 1 | [Inserta aquí tu respuesta] | [Inserta aquí tu respuesta] |
+| 1 | [Duda de como tener todos los cambios de mis compañeros en mi VS code] | [El profe me explico que en caso de que no aparezca, ir a la sección de arriba y seleccionar pull para actualizarme y push para mandar mis cambios.] |
 | 2 | [Inserta aquí tu respuesta] | [Inserta aquí tu respuesta] |
 | 3 | [Inserta aquí tu respuesta] | [Inserta aquí tu respuesta] |
