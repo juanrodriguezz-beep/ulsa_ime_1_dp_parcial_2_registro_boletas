@@ -8,8 +8,8 @@ y llena tu copia.
 
 ## 1. Autor
 
-**Nombre:** [Daniel M.F.]
-**Matrícula:** [26167]
+**Nombre:** [Juan Antonio Rodriguez Zuñiga]
+**Matrícula:** [26221]
 **Bloque y opción elegida:** [Inserta aquí tu respuesta]
 **Archivo de código:** [Inserta aquí tu respuesta]
 

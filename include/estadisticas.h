@@ -4,6 +4,8 @@
 #include <iomanip>
 #include <string>
 
+using namespace std;
+
 void mostrarEstadisticas(
 	const std::string nombres[],
 	const double espanol[],

@@ -12,7 +12,7 @@ Dentro de un equipo no puede haber dos propuestas iguales.
 
 Propuesta de mejora elaborada por: [Inserta aquí tu respuesta]
 
-**Matrícula:** [26167]
+**Matrícula:** [Inserta aquí tu respuesta]
 **Título de la propuesta:** [Inserta aquí tu respuesta]
 
 ## 1. Impacto
