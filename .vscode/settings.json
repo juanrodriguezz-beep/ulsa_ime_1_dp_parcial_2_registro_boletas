@@ -22,7 +22,7 @@
   "C_Cpp.autocomplete": "disabled",
   "C_Cpp.suggestSnippets": false,
   "C_Cpp.autocompleteAddParentheses": false,
-  "C_Cpp.errorSquiggles": "enabled",
+  "C_Cpp.errorSquiggles": "disabled",
   "C_Cpp.inlayHints.parameterNames.enabled": false,
   "C_Cpp.inlayHints.autoDeclarationTypes.enabled": false,
 
