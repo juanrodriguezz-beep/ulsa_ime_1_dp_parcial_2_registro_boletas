@@ -1,43 +1,96 @@
 #pragma once
+
 #include <iostream>
 #include <iomanip>
 #include <string>
-#include "registro.h"
 
-const int MATERIAS_ESTADISTICAS = 3;  // constante propia
+using namespace std;
 
-std::string nombreMateria(int indice) {
-    switch (indice) {  // decision multiple
-        case 0:  return "Espanol";
-        case 1:  return "Matematicas";
-        default: return "Diseno de Programas";
-    }
-}
+void mostrarEstadisticas(
+	const std::string nombres[],
+	const double espanol[],
+	const double matematicas[],
+	const double disenoProgramas[],
+	int total)
+{
+	const int CANTIDAD_MATERIAS = 3;
+    (void)nombres;
 
-void estadisticasPorMateria(const std::string nombres[], const double espanol[],
-                            const double matematicas[], const double diseno[],
-                            int total) {
-    if (total == 0) {  // rechazo
-        std::cout << "No hay alumnos registrados.\n";
-        return;
-    }
-    (void)nombres;  // no se usa, pero la firma recibe los cuatro arreglos
+	if (total <= 0) {
+		std::cout << "No hay alumnos registrados.\n";
+		return;
+	}
 
-    double suma[MATERIAS_ESTADISTICAS] = {0.0, 0.0, 0.0};  // acumuladores
-    for (int i = 0; i < total; i++) {  // ciclo
-        suma[0] += espanol[i];
-        suma[1] += matematicas[i];
-        suma[2] += diseno[i];
-    }
+	double sumaEspanol = 0;
+	double sumaMatematicas = 0;
+	double sumaDiseno = 0;
 
-    int masAlta = 0, masBaja = 0;
-    std::cout << "--- ESTADISTICAS POR MATERIA ---\n" << std::fixed << std::setprecision(1);
-    for (int m = 0; m < MATERIAS_ESTADISTICAS; m++) {
-        double promedio = suma[m] / total;
-        std::cout << nombreMateria(m) << ": " << promedio << "\n";
-        if (suma[m] > suma[masAlta]) masAlta = m;  // empate: gana la primera
-        if (suma[m] < suma[masBaja]) masBaja = m;
-    }
-    std::cout << "Mas alta: " << nombreMateria(masAlta) << "\n";
-    std::cout << "Mas baja: " << nombreMateria(masBaja) << "\n";
+	for (int i = 0; i < total; i++) {
+		sumaEspanol += espanol[i];
+		sumaMatematicas += matematicas[i];
+		sumaDiseno += disenoProgramas[i];
+	}
+
+	double promedioEspanol = sumaEspanol / total;
+	double promedioMatematicas = sumaMatematicas / total;
+	double promedioDiseno = sumaDiseno / total;
+
+	int indiceMayor = 0;
+	int indiceMenor = 0;
+
+	double promedios[CANTIDAD_MATERIAS] = {
+		promedioEspanol,
+		promedioMatematicas,
+		promedioDiseno
+	};
+
+	for (int i = 1; i < CANTIDAD_MATERIAS; i++) {
+		if (promedios[i] > promedios[indiceMayor]) {
+			indiceMayor = i;
+		}
+
+		if (promedios[i] < promedios[indiceMenor]) {
+			indiceMenor = i;
+		}
+	}
+
+	std::cout << std::fixed << std::setprecision(1);
+	std::cout << "--- ESTADISTICAS POR MATERIA ---\n";
+	std::cout << "Espanol: " << promedioEspanol << "\n";
+	std::cout << "Matematicas: " << promedioMatematicas << "\n";
+	std::cout << "Diseno de Programas: " << promedioDiseno << "\n";
+
+	std::cout << "Materia mas alta: ";
+
+	switch (indiceMayor) {
+		case 0:
+			std::cout << "Espanol\n";
+			break;
+		case 1:
+			std::cout << "Matematicas\n";
+			break;
+		case 2:
+			std::cout << "Diseno de Programas\n";
+			break;
+		default:
+			std::cout << "Desconocida\n";
+			break;
+	}
+
+	std::cout << "Materia mas baja: ";
+
+	switch (indiceMenor) {
+		case 0:
+			std::cout << "Espanol\n";
+			break;
+		case 1:
+			std::cout << "Matematicas\n";
+			break;
+		case 2:
+			std::cout << "Diseno de Programas\n";
+			break;
+		default:
+			std::cout << "Desconocida\n";
+			break;
+	}
 }
