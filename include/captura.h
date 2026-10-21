@@ -32,10 +32,6 @@ int capturarAlumno(std::string nombres[], double espanol[], double matematicas[]
         return total;
     }
 
-        std::cout << "La lista esta llena (" << MAX_ALUMNOS << " alumnos).\n";
-        return total;
-    }
-
     std::string nombre = leerCadena("Nombre: ");
     while (nombre.empty()) {
         std::cout << "El nombre no puede estar vacio.\n";
@@ -50,9 +46,6 @@ int capturarAlumno(std::string nombres[], double espanol[], double matematicas[]
     int nuevoTotal = agregarAlumno(nombres, espanol, matematicas, diseno,
                                    total, nombre, cal[0], cal[1], cal[2]);
 
-    std::cout << "Alumno " << nuevoTotal << " registrado.\n";
-    return nuevoTotal;
-}
     std::cout << "Alumno " << nuevoTotal << " registrado.\n";
     return nuevoTotal;
 }

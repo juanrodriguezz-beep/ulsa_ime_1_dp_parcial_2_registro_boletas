@@ -43,7 +43,7 @@ void reporteAprobados(const std::string /*nombres*/[], const double esp[],
         }
 
         int reprobados = total - aprobados;
-        std::cout << materia << ": " << aprobados << " aprobados, "
+        std::cout << materia.c_str() << ": " << aprobados << " aprobados, "
                   << reprobados << " reprobados\n";
     }
 }
