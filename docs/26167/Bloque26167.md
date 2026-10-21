@@ -66,7 +66,7 @@ Alumno no encontrado (posicion == -1): muestra "No se encontro al alumno " segui
 Tu receta en pseudocódigo, escrita antes de programar.
 
 ```
-[1. Recibir los arreglos de nombres, Español, Matemáticas y Diseño de Programas, y el total de alumnos registrados.
+1. Recibir los arreglos de nombres, Español, Matemáticas y Diseño de Programas, y el total de alumnos registrados.
 2. Definir la constante con el número de materias (3).
 3. Si el total de alumnos es 0, mostrar "No hay alumnos registrados." y terminar.
 4. Pedir el nombre del alumno a buscar.
@@ -81,17 +81,17 @@ Tu receta en pseudocódigo, escrita antes de programar.
 11. Mostrar la boleta: nombre, las tres calificaciones, el promedio (con un decimal) y las materias reprobadas.
 12. Según el contador de materias reprobadas:
        si es 0, mostrar "Estado: Aprobado";
-       si es 1, 2 o 3, mostrar "Estado: Reprobado".]
+       si es 1, 2 o 3, mostrar "Estado: Reprobado".
 ```
 
 **¿Probaste tu receta a mano con los datos del escenario? ¿Qué corregiste?**
 
-[Si, solo me remarque que solo se pueden usar los nombres utilizados, fuera de eso simples errores de aclaración]
+[Sí, la probé a mano con los datos del ejemplo de la guía, con Marta (6, 5 y 7) me dio promedio 6.0, 2 materias reprobadas y que esta reprobado, y con Hugo, que no existe, el programa muestra que no se encontró al alumno,vi que la búsqueda solo funciona con nombres que ya estén registrados y escritos exactamente igual, lo que corregí fue agregar una constante propia (TOTAL_MATERIAS_BOLETA), porque en mi código el número de materias estaba escrito de una forma directa.]
 
 ## 6. Bitácora de dudas y errores
 
 | # | Duda o error | Cómo lo resolví |
 | --- | --- | --- |
 | 1 | [Duda de como tener todos los cambios de mis compañeros en mi VS code] | [El profe me explico que en caso de que no aparezca, ir a la sección de arriba y seleccionar pull para actualizarme y push para mandar mis cambios.] |
-| 2 | [No mas dudas] | [Inserta aquí tu respuesta] |
-| 3 | [Inserta aquí tu respuesta] | [Inserta aquí tu respuesta] |
+| 2 | [Mi código no tenía constante propia, y el contrato del bloque la pedía.] | [Definí TOTAL_MATERIAS_BOLETA = 3 y la usé para calcular el promedio.] |
+| 3 | [Tuve un problrma con los apartados y donde deberian de ir] | [Los revise con calma y ya los acomode]
