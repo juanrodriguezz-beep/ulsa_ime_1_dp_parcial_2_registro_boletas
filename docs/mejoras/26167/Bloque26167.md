@@ -27,7 +27,7 @@ y llena tu copia.
 
 Teclado: el nombre del alumno a buscar, que se lee con leerCadena("Nombre a buscar: ").
 
-Salidas: la función es void, así que no devolvera nada, imprime la boleta con el nombre, las tres calificaciones, el promedio (con un decimal), las materias reprobadas y si esta aprobado o reprobado, en caso de  problema imprime un mensaje de rechazo.]
+Salidas: la función es void, así que no devolvera nada, imprime la boleta con el nombre, las tres calificaciones, el promedio (con un decimal), las materias reprobadas y si esta aprobado o reprobado, en caso de algun problema imprime un mensaje de rechazo.]
 
 ## 4. Decisiones de diseño
 
@@ -35,27 +35,31 @@ Explica cada decisión y por qué la tomaste.
 
 **¿Qué funciones tiene tu bloque y qué hace cada una?**
 
-[Inserta aquí tu respuesta]
+[boletaIndividual es la función de mi bloque, pide el nombre, busca el alumno, calcula el promedio y las materias reprobadas, imprime la boleta y decide el estado. también use leerCadena, que lo saque de utilerias.h, para leer el nombre desde el teclado.]
 
 **¿Qué ciclo usaste y por qué ese?**
 
-[Inserta aquí tu respuesta]
+[Usé un ciclo for para buscar al alumno, porque ya sé cuántos alumnos hay con totalAlumnos y tengo que recorrer las posiciones de 0 a totalAlumnos - 1, cuando encuentro el nombre guardo la posición y salgo con break, para no seguir de más.]
 
 **¿Qué acumuladores o contadores usaste y con qué valor inician?**
 
-[Inserta aquí tu respuesta]
+[Use 3,
+ posicion inicia en -1, guarda en qué lugar de los arreglos está el alumno; si al terminar el ciclo sigue en -1, significa que no se encontró.
+reprobadas inicia en 0,es un contador: suma 1 por cada materia con calificación menor a 7.0.
+promedio no es un acumulador, se calcula una sola vez sumando las tres calificaciones y dividiendo entre 3.0.]
 
 **¿Dónde está tu decisión múltiple y qué casos cubre?**
 
-[Inserta aquí tu respuesta]
+[Es el switch (reprobadas) al final de la función, el caso 0 imprime "Estado: Aprobado", los casos 1, 2 y 3 tienen el mismo resultado e imprimen "Estado: Reprobado".]
 
 **¿Qué constantes definiste y por qué son constantes?**
 
-[Inserta aquí tu respuesta]
+[En este archivo no definí constantes con nombre: la calificación mínima aprobatoria (7.0) y el número de materias (3.0) los escribí directamente en el código.]
 
 **¿Qué casos de rechazo maneja tu bloque y qué mensaje muestra en cada uno?**
 
-[Inserta aquí tu respuesta]
+[Lista vacía (totalAlumnos == 0): muestra "No hay alumnos registrados." y termina la función con return.
+Alumno no encontrado (posicion == -1): muestra "No se encontro al alumno " luego el nombre que se buscó, y termina con return.]
 
 ## 5. Receta
 
@@ -73,6 +77,6 @@ Tu receta en pseudocódigo, escrita antes de programar.
 
 | # | Duda o error | Cómo lo resolví |
 | --- | --- | --- |
-| 1 | [Inserta aquí tu respuesta] | [Inserta aquí tu respuesta] |
+| 1 | [Duda de como tener todos los cambios de mis compañeros en mi VS code] | [El profe me explico que en caso de que no aparezca, ir a la sección de arriba y seleccionar pull para actualizarme y push para mandar mis cambios.] |
 | 2 | [Inserta aquí tu respuesta] | [Inserta aquí tu respuesta] |
 | 3 | [Inserta aquí tu respuesta] | [Inserta aquí tu respuesta] |

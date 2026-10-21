@@ -11,70 +11,65 @@
 
 #include "utilerias.h"
 #include "registro.h"
-#include "aprobados.h"
 #include "aprobados reprobados.h"
-#include "boleta.h"
 #include "boleta individual.h"
 #include "captura.h"
 #include "estadisticas.h"
-#include "materias reprobadas.h"
-#include "mejor peor desempeno.h"
-#include "reprobados.h"
+//#include "materias reprobadas.h"
+//#include "mejor peor desempeno.h"
 
 int main() {
+    // Arreglos paralelos: el mismo indice es el mismo alumno
     std::string nombres[MAX_ALUMNOS];
-    double espanol[MAX_ALUMNOS];
-    double matematicas[MAX_ALUMNOS];
-    double diseno[MAX_ALUMNOS];
+    double esp[MAX_ALUMNOS];
+    double mat[MAX_ALUMNOS];
+    double dp[MAX_ALUMNOS];
     int total = 0;
 
-    const int OPCION_SALIR = 7;
-    int opcion = 0;
+    const int OPCION_SALIR = 8;
+    int opcion;
 
-    
-    // TODO: declaren aqui los cuatro arreglos paralelos y el total de alumnos.
-    //       No usen variables globales.
-
-
-    // TODO: menu que se repite hasta elegir "Salir".
-    //       Una opcion por bloque individual, mas "Mostrar lista" y "Salir".
-    //       Una opcion que no existe se rechaza con un mensaje.
->
-    while (opcion != OPCION_SALIR) {
+    do {
         std::cout << "\n1. Capturar alumno\n"
                   << "2. Mostrar lista\n"
                   << "3. Estadisticas por materia\n"
                   << "4. Aprobados y reprobados\n"
                   << "5. Boleta individual\n"
                   << "6. Materias reprobadas por alumno\n"
-                  << "7. Salir\n";
+                  << "7. Mejor y peor desempeno\n"
+                  << "8. Salir\n";
         opcion = leerEntero("Opcion: ");
 
         switch (opcion) {
             case 1:
-                total = capturarAlumno(nombres, espanol, matematicas, diseno, total);
+                total = capturarAlumno(nombres, esp, mat, dp, total);
                 break;
             case 2:
-                mostrarLista(nombres, espanol, matematicas, diseno, total);
+                mostrarLista(nombres, esp, mat, dp, total);
                 break;
             case 3:
-                estadisticasPorMateria(nombres, espanol, matematicas, diseno, total);
+                mostrarEstadisticas(nombres, esp, mat, dp, total);
                 break;
             case 4:
-                aprobadosYReprobados(nombres, espanol, matematicas, diseno, total);
+                reporteAprobados(nombres, esp, mat, dp, total);
                 break;
             case 5:
-                boletaIndividual(nombres, espanol, matematicas, diseno, total);
+                boletaIndividual(nombres, esp, mat, dp, total);
                 break;
             case 6:
-                materiasReprobadasPorAlumno(nombres, espanol, matematicas, diseno, total);
+                std::cout << "Pendiente: falta el bloque de materias reprobadas.\n";
+                break;
+            case 7:
+                std::cout << "Pendiente: falta el bloque de mejor y peor desempeno.\n";
                 break;
             case OPCION_SALIR:
                 std::cout << "Hasta luego.\n";
                 break;
             default:
                 std::cout << "Opcion invalida.\n";
+                break;
         }
-    }
+    } while (opcion != OPCION_SALIR);
+
     return 0;
 }
