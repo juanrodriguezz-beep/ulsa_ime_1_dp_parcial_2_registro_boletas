@@ -86,7 +86,7 @@ Tu receta en pseudocódigo, escrita antes de programar.
 
 **¿Probaste tu receta a mano con los datos del escenario? ¿Qué corregiste?**
 
-[Sí, la probé a mano con los datos del ejemplo de la guía, con Marta (6, 5 y 7) me dio promedio 6.0, 2 materias reprobadas y que esta reprobado, y con Hugo, que no existe, el programa muestra que no se encontró al alumno,vi que la búsqueda solo funciona con nombres que ya estén registrados y escritos exactamente igual, lo que corregí fue agregar una constante propia (TOTAL_MATERIAS_BOLETA), porque en mi código el número de materias estaba escrito de una forma directa.]
+[Sí, la probé a mano con los datos del ejemplo de la guía, con el estudiante 1 (6, 5 y 7) me dio promedio 6.0, 2 materias reprobadas y que esta reprobado, y con el estudiante 2, que no existe, el programa muestra que no se encontró al alumno,vi que la búsqueda solo funciona con nombres que ya estén registrados y escritos exactamente igual, lo que corregí fue agregar una constante propia (TOTAL_MATERIAS_BOLETA), porque en mi código el número de materias estaba escrito de una forma directa.]
 
 ## 6. Bitácora de dudas y errores
 
