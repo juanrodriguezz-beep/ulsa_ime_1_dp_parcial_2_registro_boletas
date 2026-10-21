@@ -38,5 +38,24 @@ No cambio: los parámetros de la función, el rechazo de lista vacía, el switch
 Receta en pseudocódigo de la solución con tu propuesta. Marca cada paso nuevo con `[NUEVO]` y cada paso que cambia con `[CAMBIA]`. Los pasos sin marca son los que ya existen.
 
 ```
-[Inserta aquí tu respuesta]
+[1. Recibir los arreglos de nombres, Español, Matemáticas y Diseño de Programas, y el total de alumnos registrados.
+2. Definir la constante con el número de materias (3).
+3. [NUEVO] Declarar el arreglo de posiciones con tamaño MAX_ALUMNOS.
+4. Si el total de alumnos es 0, mostrar "No hay alumnos registrados." y terminar.
+5. Pedir el nombre del alumno a buscar.
+6. [CAMBIA] Iniciar en 0 el contador de coincidencias (antes se iniciaba la posición en -1).
+7. [CAMBIA] Recorrer toda la lista de alumnos, sin detenerse en el primero:
+       Si el nombre del alumno es igual al buscado,
+           [NUEVO] guardar su posición en el arreglo de posiciones
+           [NUEVO] y sumar 1 al contador de coincidencias.
+8. [CAMBIA] Si el contador de coincidencias es 0, mostrar "No se encontro al alumno" y el nombre buscado, y terminar.
+9. [NUEVO] Si el contador de coincidencias es mayor que 1, avisar cuántos alumnos tienen ese nombre.
+10. [CAMBIA] Para cada posición guardada en el arreglo de posiciones:
+       Calcular el promedio: sumar las tres calificaciones y dividir entre el número de materias.
+       Iniciar en 0 el contador de materias reprobadas.
+       Por cada materia con calificación menor a 7.0, sumar 1 al contador.
+       Mostrar la boleta: nombre, las tres calificaciones, el promedio (con un decimal) y las materias reprobadas.
+       Según el contador de materias reprobadas:
+           si es 0, mostrar "Estado: Aprobado";
+           si es 1, 2 o 3, mostrar "Estado: Reprobado".]
 ```
