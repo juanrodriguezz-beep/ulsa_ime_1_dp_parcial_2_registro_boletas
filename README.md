@@ -33,7 +33,10 @@ g++ -Wall -Wextra -std=c++17 -Iinclude src/main.cpp -o boletas
 
 Escriban las reglas que su programa sigue y que el cálculo a mano necesita. Por ejemplo: qué pasa cuando hay un empate, cómo se busca un nombre, con cuántos decimales se imprime.
 
-[Inserta aquí tu respuesta]
+[La boleta individual busca el nombre exacto, diferencia mayúsculas de minúsculas, y se detiene en el primer alumno que coincide.
+Una materia con calificación menor a 7.0 cuenta como reprobada.
+El estado es Aprobado con 0 materias reprobadas y Reprobado con 1 a 3.
+El promedio se imprime con un decimal.]
 
 ## 5. Datos del escenario
 
@@ -81,7 +84,7 @@ Enlace a la documentación y a la propuesta de mejora de cada integrante.
 | Bloque | Documentación | Propuesta de mejora |
 | --- | --- | --- |
 | 1 | [Inserta aquí tu respuesta] | [Inserta aquí tu respuesta] |
-| 2 | [Inserta aquí tu respuesta] | [Inserta aquí tu respuesta] |
+| 2 | [docs/26167/bloque.md] | [docs/mejoras/26167/mejora.md] |
 | 3 | [Inserta aquí tu respuesta] | [Inserta aquí tu respuesta] |
 | 4 | [Inserta aquí tu respuesta] | [Inserta aquí tu respuesta] |
 | 5 | [Inserta aquí tu respuesta] | [Inserta aquí tu respuesta] |
