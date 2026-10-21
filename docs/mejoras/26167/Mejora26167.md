@@ -27,7 +27,7 @@ Propuesta de mejora elaborada por: [Daniel Miranda Ferreira]
 
 [Arreglo nuevo dentro de boletaIndividual: un arreglo para guardar las posiciones de todos los alumnos que coinciden, en lugar de la sola variable posicion, es necesario porque tener solo una variable  guarda solo un lugar.
 Contador nuevo: un contador de coincidencias que inicia en 0 y suma 1 cada vez que el nombre coincide,sirve para saber si no hubo ninguna, hubo una o hubo varias.
-Constante: el arreglo de posiciones necesita un tamaño fijo, así que se usa una constante con el máximo de alumnos, si el proyecto ya tiene una, se reutiliza, es constante porque el tamaño de un arreglo no debe de cambiar mientras se corre el programa.
+Constante: el arreglo de posiciones necesita un tamaño fijo, así que se usa la constante MAX_ALUMNOS que esta en  registro.h, que vale 6, es una  constante porque el tamaño de un arreglo no debe cambiar mientras se corre el programa, y así, si el máximo cambia, solo se modifica en un lugar.
 Ciclo de búsqueda: el for sigue siendo el mismo, pero ya no se sale con break al primer alumno encontrado, ahora recorre toda la lista, porque puede haber más coincidencias.
 Rechazo de "no encontrado": deja de revisar posicion == -1 y revisa que el contador sea 0, aun así el mensaje es el mismo.
 Mostrar la boleta: el cálculo del promedio, las materias reprobadas, la boleta y el switch del estado se repiten por cada posición guardada para mostrar una boleta por cada alumno con ese nombre, se agrega un aviso cuando hay más de un alumno.
