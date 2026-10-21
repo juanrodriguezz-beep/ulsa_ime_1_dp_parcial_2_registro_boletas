@@ -15,8 +15,8 @@
 #include "boleta individual.h"
 #include "captura.h"
 #include "estadisticas.h"
-//#include "materias reprobadas.h"
-//#include "mejor peor desempeno.h"
+#include "materias reprobadas.h"
+#include "MejorPeorDesempeno.h"
 
 int main() {
     // Arreglos paralelos: el mismo indice es el mismo alumno
@@ -42,7 +42,7 @@ int main() {
 
         switch (opcion) {
             case 1:
-                total = capturarAlumno(nombres, esp, mat, dp, total);
+                capturarAlumno(nombres, esp, mat, dp, total);
                 break;
             case 2:
                 mostrarLista(nombres, esp, mat, dp, total);
@@ -57,11 +57,11 @@ int main() {
                 boletaIndividual(nombres, esp, mat, dp, total);
                 break;
             case 6:
-                std::cout << "Pendiente: falta el bloque de materias reprobadas.\n";
+                mostrarMateriasReprobadas(nombres, esp, mat, dp, total);
                 break;
             case 7:
-                std::cout << "Pendiente: falta el bloque de mejor y peor desempeno.\n";
-                break;
+                 mostrarMejorPeorDesempeno(nombres, esp, mat, dp, total);
+                 break;
             case OPCION_SALIR:
                 std::cout << "Hasta luego.\n";
                 break;

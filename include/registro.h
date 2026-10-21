@@ -73,3 +73,50 @@ void mostrarLista(const std::string nombres[],
 
 // ---------- Implementacion (equipo) ----------
 // Escriban aqui abajo el codigo de las tres funciones.
+inline int agregarAlumno(
+    std::string nombres[],
+    double espanol[],
+    double matematicas[],
+    double disenoProgramas[],
+    int total,
+    std::string nombre,
+    double calificacionEspanol,
+    double calificacionMatematicas,
+    double calificacionDisenoProgramas)
+{
+    if (total >= MAX_ALUMNOS)
+    {
+        return total;
+    }
+
+    nombres[total] = nombre;
+    espanol[total] = calificacionEspanol;
+    matematicas[total] = calificacionMatematicas;
+    disenoProgramas[total] = calificacionDisenoProgramas;
+
+    return total + 1;
+}
+
+inline void mostrarLista(
+    const std::string nombres[],
+    const double espanol[],
+    const double matematicas[],
+    const double disenoProgramas[],
+    int total)
+{
+    if (total <= 0)
+    {
+        std::cout << "No hay alumnos registrados.\n";
+        return;
+    }
+
+    for (int i = 0; i < total; i++)
+    {
+        std::cout << "\nAlumno " << i + 1 << '\n';
+        std::cout << "Nombre: " << nombres[i] << '\n';
+        std::cout << "Espanol: " << espanol[i] << '\n';
+        std::cout << "Matematicas: " << matematicas[i] << '\n';
+        std::cout << "Diseno de Programas: "
+                  << disenoProgramas[i] << '\n';
+    }
+}

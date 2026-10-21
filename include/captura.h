@@ -1,51 +1,97 @@
 #pragma once
+
 #include <iostream>
 #include <string>
 #include "utilerias.h"
 #include "registro.h"
 
-const int TOTAL_MATERIAS = 3;  // constante propia
+using namespace std;
 
-// Pide una calificacion de la materia indicada (0, 1 o 2)
-// y repite mientras sea invalida.
-double pedirCalificacion(int materia) {
-    std::string mensaje;
-    switch (materia) {  // decision multiple
-        case 0:  mensaje = "Espanol: ";             break;
-        case 1:  mensaje = "Matematicas: ";         break;
-        default: mensaje = "Diseno de Programas: "; break;
+const int TOTAL_MATERIAS = 3;
+
+// Solicita una calificacion valida para una materia
+double pedirCalificacion(int materia)
+{
+    string nombreMateria;
+
+    switch (materia)
+    {
+        case 0:
+            nombreMateria = "Espanol";
+            break;
+
+        case 1:
+            nombreMateria = "Matematicas";
+            break;
+
+        case 2:
+            nombreMateria = "Diseno de Programas";
+            break;
+
+        default:
+            nombreMateria = "Materia";
+            break;
     }
-    double calificacion = leerDecimal(mensaje);
-    while (!calificacionValida(calificacion)) {  // ciclo
-        std::cout << "Calificacion invalida. Debe estar entre "
-                  << CALIFICACION_MINIMA << " y " << CALIFICACION_MAXIMA << ".\n";
-        calificacion = leerDecimal(mensaje);
-    }
+
+    double calificacion;
+
+    do
+    {
+        calificacion = leerDecimal(
+            "Calificacion de " + nombreMateria + " (0-10): "
+        );
+
+        if (calificacion < 0.0 || calificacion > 10.0)
+        {
+            cout << "Error: la calificacion debe estar entre 0 y 10.\n";
+        }
+
+    } while (calificacion < 0.0 || calificacion > 10.0);
+
     return calificacion;
 }
 
-// Captura un alumno. Devuelve el nuevo total.
-int capturarAlumno(std::string nombres[], double espanol[], double matematicas[],
-                   double diseno[], int total) {
-    if (total >= MAX_ALUMNOS) {  // rechazo por lista llena
-        std::cout << "La lista esta llena (" << MAX_ALUMNOS << " alumnos).\n";
-        return total;
+inline void capturarAlumno(
+    string nombres[],
+    double espanol[],
+    double matematicas[],
+    double diseno[],
+    int &total
+)
+{
+    if (total >= MAX_ALUMNOS)
+    {
+        cout << "No se pueden registrar mas alumnos.\n";
+        return;
     }
 
-    std::string nombre = leerCadena("Nombre: ");
-    while (nombre.empty()) {
-        std::cout << "El nombre no puede estar vacio.\n";
-        nombre = leerCadena("Nombre: ");
+    string nombre = leerCadena("Nombre del alumno: ");
+
+    while (nombre.empty())
+    {
+        cout << "El nombre no puede estar vacio.\n";
+        nombre = leerCadena("Nombre del alumno: ");
     }
 
-    double cal[TOTAL_MATERIAS];
-    for (int m = 0; m < TOTAL_MATERIAS; m++) {
-        cal[m] = pedirCalificacion(m);
+    double calEspanol = pedirCalificacion(0);
+    double calMatematicas = pedirCalificacion(1);
+    double calDiseno = pedirCalificacion(2);
+
+    int nuevoTotal = agregarAlumno(
+        nombres,
+        espanol,
+        matematicas,
+        diseno,
+        total,
+        nombre,
+        calEspanol,
+        calMatematicas,
+        calDiseno
+    );
+
+    if (nuevoTotal > total)
+    {
+        total = nuevoTotal;
+        cout << "Alumno registrado correctamente.\n";
     }
-
-    int nuevoTotal = agregarAlumno(nombres, espanol, matematicas, diseno,
-                                   total, nombre, cal[0], cal[1], cal[2]);
-
-    std::cout << "Alumno " << nuevoTotal << " registrado.\n";
-    return nuevoTotal;
 }
