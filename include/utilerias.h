@@ -7,6 +7,7 @@
 // =====================================================
 
 #include <iostream>
+#include <istream>
 #include <string>
 #include <cctype>
 #include <cmath>

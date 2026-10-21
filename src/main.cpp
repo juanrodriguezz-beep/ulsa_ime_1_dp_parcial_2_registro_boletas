@@ -12,13 +12,13 @@
 #include "utilerias.h"
 #include "registro.h"
 #include "aprobados.h"
-#include "aprobados-reprobados.h"
+#include "aprobados reprobados.h"
 #include "boleta.h"
 #include "boleta individual.h"
 #include "captura.h"
 #include "estadisticas.h"
-#include "materias-reprobadas.h"
-#include "mejor-peor-desempeno.h"
+#include "materias reprobadas.h"
+#include "mejor peor desempeno.h"
 #include "reprobados.h"
 
 int main() {
@@ -31,6 +31,15 @@ int main() {
     const int OPCION_SALIR = 7;
     int opcion = 0;
 
+    
+    // TODO: declaren aqui los cuatro arreglos paralelos y el total de alumnos.
+    //       No usen variables globales.
+
+
+    // TODO: menu que se repite hasta elegir "Salir".
+    //       Una opcion por bloque individual, mas "Mostrar lista" y "Salir".
+    //       Una opcion que no existe se rechaza con un mensaje.
+>
     while (opcion != OPCION_SALIR) {
         std::cout << "\n1. Capturar alumno\n"
                   << "2. Mostrar lista\n"
